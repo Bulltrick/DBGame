@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="G2776_2ModelStoreContainer" CdmEntityContainer="G2776_2Entities1">
+    <EntitySetMapping Name="Army">
+      <EntityTypeMapping TypeName="G2776_2Model.Army">
+        <MappingFragment StoreEntitySet="Army">
+          <ScalarProperty Name="ArmyID" ColumnName="ArmyID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="ArmyName" ColumnName="ArmyName" />
+          <ScalarProperty Name="ArmyMaxMovement" ColumnName="ArmyMaxMovement" />
+          <ScalarProperty Name="ArmyMovement" ColumnName="ArmyMovement" />
+          <ScalarProperty Name="ArmyBacklineProtected" ColumnName="ArmyBacklineProtected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="G2776_2Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityPopulation" ColumnName="CityPopulation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Construction">
+      <EntityTypeMapping TypeName="G2776_2Model.Construction">
+        <MappingFragment StoreEntitySet="Construction">
+          <ScalarProperty Name="ConstructionID" ColumnName="ConstructionID" />
+          <ScalarProperty Name="UpgradeID" ColumnName="UpgradeID" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="ConstructionName" ColumnName="ConstructionName" />
+          <ScalarProperty Name="ConstructionEfficiency" ColumnName="ConstructionEfficiency" />
+          <ScalarProperty Name="ConstructionDisabled" ColumnName="ConstructionDisabled" />
+          <ScalarProperty Name="ConstructionProgress" ColumnName="ConstructionProgress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Game">
+      <EntityTypeMapping TypeName="G2776_2Model.Game">
+        <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="Map_MapID" ColumnName="Map_MapID" />
+          <ScalarProperty Name="GameActivePlayerID" ColumnName="GameActivePlayerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Game_has_Player">
+      <EntityTypeMapping TypeName="G2776_2Model.Game_has_Player">
+        <MappingFragment StoreEntitySet="Game_has_Player">
+          <ScalarProperty Name="Game_has_PlayerID" ColumnName="Game_has_PlayerID" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Map">
+      <EntityTypeMapping TypeName="G2776_2Model.Map">
+        <MappingFragment StoreEntitySet="Map">
+          <ScalarProperty Name="MapID" ColumnName="MapID" />
+          <ScalarProperty Name="MapName" ColumnName="MapName" />
+          <ScalarProperty Name="MapDesc" ColumnName="MapDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Player">
+      <EntityTypeMapping TypeName="G2776_2Model.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terrain">
+      <EntityTypeMapping TypeName="G2776_2Model.Terrain">
+        <MappingFragment StoreEntitySet="Terrain">
+          <ScalarProperty Name="TerrainID" ColumnName="TerrainID" />
+          <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+          <ScalarProperty Name="TerrainName" ColumnName="TerrainName" />
+          <ScalarProperty Name="TerrainImage" ColumnName="TerrainImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tile">
+      <EntityTypeMapping TypeName="G2776_2Model.Tile">
+        <MappingFragment StoreEntitySet="Tile">
+          <ScalarProperty Name="TileID" ColumnName="TileID" />
+          <ScalarProperty Name="ArmyID" ColumnName="ArmyID" />
+          <ScalarProperty Name="TerrainID" ColumnName="TerrainID" />
+          <ScalarProperty Name="ConstructionID" ColumnName="ConstructionID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="MapID" ColumnName="MapID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="TileX" ColumnName="TileX" />
+          <ScalarProperty Name="TileY" ColumnName="TileY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit">
+      <EntityTypeMapping TypeName="G2776_2Model.Unit">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="ArmyID" ColumnName="ArmyID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="UnitOffense" ColumnName="UnitOffense" />
+          <ScalarProperty Name="UnitDefense" ColumnName="UnitDefense" />
+          <ScalarProperty Name="UnitRangedDefense" ColumnName="UnitRangedDefense" />
+          <ScalarProperty Name="UnitRanged" ColumnName="UnitRanged" />
+          <ScalarProperty Name="UnitHealth" ColumnName="UnitHealth" />
+          <ScalarProperty Name="UnitPosition" ColumnName="UnitPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitType">
+      <EntityTypeMapping TypeName="G2776_2Model.UnitType">
+        <MappingFragment StoreEntitySet="UnitType">
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+          <ScalarProperty Name="UnitTypeName" ColumnName="UnitTypeName" />
+          <ScalarProperty Name="UnitTypeDesc" ColumnName="UnitTypeDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upgrade">
+      <EntityTypeMapping TypeName="G2776_2Model.Upgrade">
+        <MappingFragment StoreEntitySet="Upgrade">
+          <ScalarProperty Name="UpgradeID" ColumnName="UpgradeID" />
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+          <ScalarProperty Name="UpgradeName" ColumnName="UpgradeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="City_has_Construction" TypeName="G2776_2Model.City_has_Construction" StoreEntitySet="City_has_Construction">
+      <EndProperty Name="City">
+        <ScalarProperty Name="CityID" ColumnName="CityID" />
+      </EndProperty>
+      <EndProperty Name="Construction">
+        <ScalarProperty Name="ConstructionID" ColumnName="ConstructionID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Unit_has_UnitType" TypeName="G2776_2Model.Unit_has_UnitType" StoreEntitySet="Unit_has_UnitType">
+      <EndProperty Name="Unit">
+        <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+      </EndProperty>
+      <EndProperty Name="UnitType">
+        <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Unit_has_Upgrade" TypeName="G2776_2Model.Unit_has_Upgrade" StoreEntitySet="Unit_has_Upgrade">
+      <EndProperty Name="Unit">
+        <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+      </EndProperty>
+      <EndProperty Name="Upgrade">
+        <ScalarProperty Name="UpgradeID" ColumnName="UpgradeID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

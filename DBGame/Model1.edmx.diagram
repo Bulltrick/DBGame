@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c179cd1ae32f4e01b2ce5256c65bb756" Name="Diagram1">
+        <EntityTypeShape EntityType="G2776_2Model.Army" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.City" Width="1.5" PointX="1.625" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Construction" Width="1.5" PointX="9.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Game" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Game_has_Player" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Map" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Player" Width="1.5" PointX="0.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Terrain" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Tile" Width="1.5" PointX="6.125" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Unit" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.UnitType" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="G2776_2Model.Upgrade" Width="1.5" PointX="9.75" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="G2776_2Model.fk_Army_Player1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Tile_Army1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Unit_Army1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Tile_City1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Construction_Unit1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Construction_Upgrade1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Tile_Construction1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Game_has_Player_Game1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Game_Map1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Game_has_Player_Player1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Tile_Map1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Tile_Player1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Tile_Terrain1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.fk_Upgrade_UnitType1" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.City_has_Construction" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.Unit_has_UnitType" ManuallyRouted="false" />
+        <AssociationConnector Association="G2776_2Model.Unit_has_Upgrade" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

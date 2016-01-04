@@ -1,0 +1,26 @@
+﻿<Window x:Class="DBGame.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StartWindow" Height="1000" Width="1250">
+    <Grid>
+        <Button Name="btnStart" Content="Start Game" HorizontalAlignment="Left" Margin="36,240,0,0" VerticalAlignment="Top" Width="170" Height="94" Click="btnStart_Click"/>
+        <ComboBox Name="cmbPlayer" HorizontalAlignment="Left" Margin="36,60,0,0" VerticalAlignment="Top" Width="170" SelectionChanged="cmbPlayer_SelectionChanged"/>
+        <ComboBox Name="cmbGame" HorizontalAlignment="Left" Margin="36,120,0,0" VerticalAlignment="Top" Width="170" SelectionChanged="cmbGame_SelectionChanged"/>
+        <Label Content="Who are you?" HorizontalAlignment="Left" Margin="36,29,0,0" VerticalAlignment="Top" Width="170"/>
+        <Label Content="Choose game" HorizontalAlignment="Left" Margin="36,89,0,0" VerticalAlignment="Top" Width="170"/>
+        <Label Name="lblOpponent" Content="Opponent: " HorizontalAlignment="Left" Margin="36,147,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button Name="btnMapEditor" Content="Map Editor" HorizontalAlignment="Left" Margin="626,242,0,0" VerticalAlignment="Top" Width="166" Height="94" Click="btnMapEditor_Click"/>
+        <Label Content="Select map to edit" HorizontalAlignment="Left" Margin="626,149,0,0" VerticalAlignment="Top" Width="166"/>
+        <ComboBox Name="cmbMapForEditor" HorizontalAlignment="Left" Margin="626,180,0,0" VerticalAlignment="Top" Width="166"/>
+        <Label Name="lblMap" Content="Map: " HorizontalAlignment="Left" Margin="36,173,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button Name="btnSaveUser" Content="Save new user" HorizontalAlignment="Left" Margin="853,242,0,0" VerticalAlignment="Top" Width="174" Height="94" Click="btnSaveUser_Click"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" Margin="853,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="853,147,0,0" VerticalAlignment="Top" Width="174"/>
+        <Button Name="btnNewGame" Content="New Game" HorizontalAlignment="Left" Margin="275,242,0,0" VerticalAlignment="Top" Width="168" Height="92" Click="btnNewGame_Click"/>
+        <ComboBox Name="cmbOpponent" HorizontalAlignment="Left" Margin="275,120,0,0" VerticalAlignment="Top" Width="168"/>
+        <ComboBox Name="cmbMap" HorizontalAlignment="Left" Margin="275,180,0,0" VerticalAlignment="Top" Width="168"/>
+        <Label Content="Choose Opponent" HorizontalAlignment="Left" Margin="275,89,0,0" VerticalAlignment="Top" Width="168"/>
+        <Label Content="Choose Map" HorizontalAlignment="Left" Margin="275,154,0,0" VerticalAlignment="Top" Width="168"/>
+
+    </Grid>
+</Window>

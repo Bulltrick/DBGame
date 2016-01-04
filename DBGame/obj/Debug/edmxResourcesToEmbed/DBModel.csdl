@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="G2776_2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="G2776_2Entities3" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Army" EntityType="G2776_2Model.Army" />
+    <EntitySet Name="City" EntityType="G2776_2Model.City" />
+    <EntitySet Name="Construction" EntityType="G2776_2Model.Construction" />
+    <EntitySet Name="Game" EntityType="G2776_2Model.Game" />
+    <EntitySet Name="Game_has_Player" EntityType="G2776_2Model.Game_has_Player" />
+    <EntitySet Name="Map" EntityType="G2776_2Model.Map" />
+    <EntitySet Name="Player" EntityType="G2776_2Model.Player" />
+    <EntitySet Name="Terrain" EntityType="G2776_2Model.Terrain" />
+    <EntitySet Name="Tile" EntityType="G2776_2Model.Tile" />
+    <EntitySet Name="Unit" EntityType="G2776_2Model.Unit" />
+    <EntitySet Name="UnitType" EntityType="G2776_2Model.UnitType" />
+    <EntitySet Name="Upgrade" EntityType="G2776_2Model.Upgrade" />
+    <AssociationSet Name="fk_Army_Player1" Association="G2776_2Model.fk_Army_Player1">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Army" EntitySet="Army" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tile_Army1" Association="G2776_2Model.fk_Tile_Army1">
+      <End Role="Army" EntitySet="Army" />
+      <End Role="Tile" EntitySet="Tile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Unit_Army1" Association="G2776_2Model.fk_Unit_Army1">
+      <End Role="Army" EntitySet="Army" />
+      <End Role="Unit" EntitySet="Unit" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tile_City1" Association="G2776_2Model.fk_Tile_City1">
+      <End Role="City" EntitySet="City" />
+      <End Role="Tile" EntitySet="Tile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Construction_Unit1" Association="G2776_2Model.fk_Construction_Unit1">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Construction" EntitySet="Construction" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Construction_Upgrade1" Association="G2776_2Model.fk_Construction_Upgrade1">
+      <End Role="Upgrade" EntitySet="Upgrade" />
+      <End Role="Construction" EntitySet="Construction" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tile_Construction1" Association="G2776_2Model.fk_Tile_Construction1">
+      <End Role="Construction" EntitySet="Construction" />
+      <End Role="Tile" EntitySet="Tile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Game_has_Player_Game1" Association="G2776_2Model.fk_Game_has_Player_Game1">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="Game_has_Player" EntitySet="Game_has_Player" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Game_Map1" Association="G2776_2Model.fk_Game_Map1">
+      <End Role="Map" EntitySet="Map" />
+      <End Role="Game" EntitySet="Game" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Game_has_Player_Player1" Association="G2776_2Model.fk_Game_has_Player_Player1">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Game_has_Player" EntitySet="Game_has_Player" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tile_Map1" Association="G2776_2Model.fk_Tile_Map1">
+      <End Role="Map" EntitySet="Map" />
+      <End Role="Tile" EntitySet="Tile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tile_Player1" Association="G2776_2Model.fk_Tile_Player1">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="Tile" EntitySet="Tile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tile_Terrain1" Association="G2776_2Model.fk_Tile_Terrain1">
+      <End Role="Terrain" EntitySet="Terrain" />
+      <End Role="Tile" EntitySet="Tile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Upgrade_UnitType1" Association="G2776_2Model.fk_Upgrade_UnitType1">
+      <End Role="UnitType" EntitySet="UnitType" />
+      <End Role="Upgrade" EntitySet="Upgrade" />
+    </AssociationSet>
+    <AssociationSet Name="City_has_Construction" Association="G2776_2Model.City_has_Construction">
+      <End Role="City" EntitySet="City" />
+      <End Role="Construction" EntitySet="Construction" />
+    </AssociationSet>
+    <AssociationSet Name="Unit_has_UnitType" Association="G2776_2Model.Unit_has_UnitType">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="UnitType" EntitySet="UnitType" />
+    </AssociationSet>
+    <AssociationSet Name="Unit_has_Upgrade" Association="G2776_2Model.Unit_has_Upgrade">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Upgrade" EntitySet="Upgrade" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Army">
+    <Key>
+      <PropertyRef Name="ArmyID" />
+    </Key>
+    <Property Name="ArmyID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="ArmyName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="ArmyMaxMovement" Type="Int32" />
+    <Property Name="ArmyMovement" Type="Int32" />
+    <Property Name="ArmyBacklineProtected" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Player" Relationship="G2776_2Model.fk_Army_Player1" FromRole="Army" ToRole="Player" />
+    <NavigationProperty Name="Tile" Relationship="G2776_2Model.fk_Tile_Army1" FromRole="Army" ToRole="Tile" />
+    <NavigationProperty Name="Unit" Relationship="G2776_2Model.fk_Unit_Army1" FromRole="Army" ToRole="Unit" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="CityPopulation" Type="Int32" />
+    <NavigationProperty Name="Tile" Relationship="G2776_2Model.fk_Tile_City1" FromRole="City" ToRole="Tile" />
+    <NavigationProperty Name="Construction" Relationship="G2776_2Model.City_has_Construction" FromRole="City" ToRole="Construction" />
+  </EntityType>
+  <EntityType Name="Construction">
+    <Key>
+      <PropertyRef Name="ConstructionID" />
+    </Key>
+    <Property Name="ConstructionID" Type="Int32" Nullable="false" />
+    <Property Name="UpgradeID" Type="Int32" />
+    <Property Name="UnitID" Type="Int32" />
+    <Property Name="ConstructionName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="ConstructionEfficiency" Type="Double" />
+    <Property Name="ConstructionDisabled" Type="Boolean" Nullable="false" />
+    <Property Name="ConstructionProgress" Type="Double" />
+    <NavigationProperty Name="Unit" Relationship="G2776_2Model.fk_Construction_Unit1" FromRole="Construction" ToRole="Unit" />
+    <NavigationProperty Name="Upgrade" Relationship="G2776_2Model.fk_Construction_Upgrade1" FromRole="Construction" ToRole="Upgrade" />
+    <NavigationProperty Name="Tile" Relationship="G2776_2Model.fk_Tile_Construction1" FromRole="Construction" ToRole="Tile" />
+    <NavigationProperty Name="City" Relationship="G2776_2Model.City_has_Construction" FromRole="Construction" ToRole="City" />
+  </EntityType>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="Map_MapID" Type="Int32" Nullable="false" />
+    <Property Name="GameActivePlayerID" Type="Int32" />
+    <NavigationProperty Name="Game_has_Player" Relationship="G2776_2Model.fk_Game_has_Player_Game1" FromRole="Game" ToRole="Game_has_Player" />
+    <NavigationProperty Name="Map" Relationship="G2776_2Model.fk_Game_Map1" FromRole="Game" ToRole="Map" />
+  </EntityType>
+  <EntityType Name="Game_has_Player">
+    <Key>
+      <PropertyRef Name="GameID" />
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="Game_has_PlayerName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Game" Relationship="G2776_2Model.fk_Game_has_Player_Game1" FromRole="Game_has_Player" ToRole="Game" />
+    <NavigationProperty Name="Player" Relationship="G2776_2Model.fk_Game_has_Player_Player1" FromRole="Game_has_Player" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Map">
+    <Key>
+      <PropertyRef Name="MapID" />
+    </Key>
+    <Property Name="MapID" Type="Int32" Nullable="false" />
+    <Property Name="MapName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="MapDesc" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Game" Relationship="G2776_2Model.fk_Game_Map1" FromRole="Map" ToRole="Game" />
+    <NavigationProperty Name="Tile" Relationship="G2776_2Model.fk_Tile_Map1" FromRole="Map" ToRole="Tile" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Army" Relationship="G2776_2Model.fk_Army_Player1" FromRole="Player" ToRole="Army" />
+    <NavigationProperty Name="Game_has_Player" Relationship="G2776_2Model.fk_Game_has_Player_Player1" FromRole="Player" ToRole="Game_has_Player" />
+    <NavigationProperty Name="Tile" Relationship="G2776_2Model.fk_Tile_Player1" FromRole="Player" ToRole="Tile" />
+  </EntityType>
+  <EntityType Name="Terrain">
+    <Key>
+      <PropertyRef Name="TerrainID" />
+    </Key>
+    <Property Name="TerrainID" Type="Int32" Nullable="false" />
+    <Property Name="TerrainType" Type="Int32" />
+    <Property Name="TerrainName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="TerrainImage" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Tile" Relationship="G2776_2Model.fk_Tile_Terrain1" FromRole="Terrain" ToRole="Tile" />
+  </EntityType>
+  <EntityType Name="Tile">
+    <Key>
+      <PropertyRef Name="TileID" />
+    </Key>
+    <Property Name="TileID" Type="Int32" Nullable="false" />
+    <Property Name="ArmyID" Type="Int32" Nullable="false" />
+    <Property Name="TerrainID" Type="Int32" Nullable="false" />
+    <Property Name="ConstructionID" Type="Int32" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="MapID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="TileX" Type="Int32" />
+    <Property Name="TileY" Type="Int32" />
+    <NavigationProperty Name="Army" Relationship="G2776_2Model.fk_Tile_Army1" FromRole="Tile" ToRole="Army" />
+    <NavigationProperty Name="City" Relationship="G2776_2Model.fk_Tile_City1" FromRole="Tile" ToRole="City" />
+    <NavigationProperty Name="Construction" Relationship="G2776_2Model.fk_Tile_Construction1" FromRole="Tile" ToRole="Construction" />
+    <NavigationProperty Name="Map" Relationship="G2776_2Model.fk_Tile_Map1" FromRole="Tile" ToRole="Map" />
+    <NavigationProperty Name="Player" Relationship="G2776_2Model.fk_Tile_Player1" FromRole="Tile" ToRole="Player" />
+    <NavigationProperty Name="Terrain" Relationship="G2776_2Model.fk_Tile_Terrain1" FromRole="Tile" ToRole="Terrain" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="Int32" Nullable="false" />
+    <Property Name="ArmyID" Type="Int32" />
+    <Property Name="UnitName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="UnitOffense" Type="Int32" />
+    <Property Name="UnitDefense" Type="Int32" />
+    <Property Name="UnitRangedDefense" Type="Int32" />
+    <Property Name="UnitRanged" Type="Boolean" Nullable="false" />
+    <Property Name="UnitHealth" Type="Int32" Nullable="false" />
+    <Property Name="UnitPosition" Type="Int32" />
+    <NavigationProperty Name="Army" Relationship="G2776_2Model.fk_Unit_Army1" FromRole="Unit" ToRole="Army" />
+    <NavigationProperty Name="Construction" Relationship="G2776_2Model.fk_Construction_Unit1" FromRole="Unit" ToRole="Construction" />
+    <NavigationProperty Name="UnitType" Relationship="G2776_2Model.Unit_has_UnitType" FromRole="Unit" ToRole="UnitType" />
+    <NavigationProperty Name="Upgrade" Relationship="G2776_2Model.Unit_has_Upgrade" FromRole="Unit" ToRole="Upgrade" />
+  </EntityType>
+  <EntityType Name="UnitType">
+    <Key>
+      <PropertyRef Name="UnitTypeID" />
+    </Key>
+    <Property Name="UnitTypeID" Type="Int32" Nullable="false" />
+    <Property Name="UnitTypeName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="UnitTypeDesc" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Upgrade" Relationship="G2776_2Model.fk_Upgrade_UnitType1" FromRole="UnitType" ToRole="Upgrade" />
+    <NavigationProperty Name="Unit" Relationship="G2776_2Model.Unit_has_UnitType" FromRole="UnitType" ToRole="Unit" />
+  </EntityType>
+  <EntityType Name="Upgrade">
+    <Key>
+      <PropertyRef Name="UpgradeID" />
+    </Key>
+    <Property Name="UpgradeID" Type="Int32" Nullable="false" />
+    <Property Name="UnitTypeID" Type="Int32" Nullable="false" />
+    <Property Name="UpgradeName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Construction" Relationship="G2776_2Model.fk_Construction_Upgrade1" FromRole="Upgrade" ToRole="Construction" />
+    <NavigationProperty Name="UnitType" Relationship="G2776_2Model.fk_Upgrade_UnitType1" FromRole="Upgrade" ToRole="UnitType" />
+    <NavigationProperty Name="Unit" Relationship="G2776_2Model.Unit_has_Upgrade" FromRole="Upgrade" ToRole="Unit" />
+  </EntityType>
+  <Association Name="fk_Army_Player1">
+    <End Role="Player" Type="G2776_2Model.Player" Multiplicity="1" />
+    <End Role="Army" Type="G2776_2Model.Army" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="Army">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tile_Army1">
+    <End Role="Army" Type="G2776_2Model.Army" Multiplicity="1" />
+    <End Role="Tile" Type="G2776_2Model.Tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Army">
+        <PropertyRef Name="ArmyID" />
+      </Principal>
+      <Dependent Role="Tile">
+        <PropertyRef Name="ArmyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Unit_Army1">
+    <End Role="Army" Type="G2776_2Model.Army" Multiplicity="0..1" />
+    <End Role="Unit" Type="G2776_2Model.Unit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Army">
+        <PropertyRef Name="ArmyID" />
+      </Principal>
+      <Dependent Role="Unit">
+        <PropertyRef Name="ArmyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tile_City1">
+    <End Role="City" Type="G2776_2Model.City" Multiplicity="1" />
+    <End Role="Tile" Type="G2776_2Model.Tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Tile">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Construction_Unit1">
+    <End Role="Unit" Type="G2776_2Model.Unit" Multiplicity="0..1" />
+    <End Role="Construction" Type="G2776_2Model.Construction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="Construction">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Construction_Upgrade1">
+    <End Role="Upgrade" Type="G2776_2Model.Upgrade" Multiplicity="0..1" />
+    <End Role="Construction" Type="G2776_2Model.Construction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Upgrade">
+        <PropertyRef Name="UpgradeID" />
+      </Principal>
+      <Dependent Role="Construction">
+        <PropertyRef Name="UpgradeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tile_Construction1">
+    <End Role="Construction" Type="G2776_2Model.Construction" Multiplicity="1" />
+    <End Role="Tile" Type="G2776_2Model.Tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Construction">
+        <PropertyRef Name="ConstructionID" />
+      </Principal>
+      <Dependent Role="Tile">
+        <PropertyRef Name="ConstructionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Game_has_Player_Game1">
+    <End Role="Game" Type="G2776_2Model.Game" Multiplicity="1" />
+    <End Role="Game_has_Player" Type="G2776_2Model.Game_has_Player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="GameID" />
+      </Principal>
+      <Dependent Role="Game_has_Player">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Game_Map1">
+    <End Role="Map" Type="G2776_2Model.Map" Multiplicity="1" />
+    <End Role="Game" Type="G2776_2Model.Game" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Map">
+        <PropertyRef Name="MapID" />
+      </Principal>
+      <Dependent Role="Game">
+        <PropertyRef Name="Map_MapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Game_has_Player_Player1">
+    <End Role="Player" Type="G2776_2Model.Player" Multiplicity="1" />
+    <End Role="Game_has_Player" Type="G2776_2Model.Game_has_Player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="Game_has_Player">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tile_Map1">
+    <End Role="Map" Type="G2776_2Model.Map" Multiplicity="1" />
+    <End Role="Tile" Type="G2776_2Model.Tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Map">
+        <PropertyRef Name="MapID" />
+      </Principal>
+      <Dependent Role="Tile">
+        <PropertyRef Name="MapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tile_Player1">
+    <End Role="Player" Type="G2776_2Model.Player" Multiplicity="1" />
+    <End Role="Tile" Type="G2776_2Model.Tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="Tile">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tile_Terrain1">
+    <End Role="Terrain" Type="G2776_2Model.Terrain" Multiplicity="1" />
+    <End Role="Tile" Type="G2776_2Model.Tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Terrain">
+        <PropertyRef Name="TerrainID" />
+      </Principal>
+      <Dependent Role="Tile">
+        <PropertyRef Name="TerrainID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Upgrade_UnitType1">
+    <End Role="UnitType" Type="G2776_2Model.UnitType" Multiplicity="1" />
+    <End Role="Upgrade" Type="G2776_2Model.Upgrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitType">
+        <PropertyRef Name="UnitTypeID" />
+      </Principal>
+      <Dependent Role="Upgrade">
+        <PropertyRef Name="UnitTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="City_has_Construction">
+    <End Role="City" Type="G2776_2Model.City" Multiplicity="*" />
+    <End Role="Construction" Type="G2776_2Model.Construction" Multiplicity="*" />
+  </Association>
+  <Association Name="Unit_has_UnitType">
+    <End Role="Unit" Type="G2776_2Model.Unit" Multiplicity="*" />
+    <End Role="UnitType" Type="G2776_2Model.UnitType" Multiplicity="*" />
+  </Association>
+  <Association Name="Unit_has_Upgrade">
+    <End Role="Unit" Type="G2776_2Model.Unit" Multiplicity="*" />
+    <End Role="Upgrade" Type="G2776_2Model.Upgrade" Multiplicity="*" />
+  </Association>
+</Schema>
